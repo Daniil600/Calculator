@@ -29,6 +29,9 @@ public class ConverterToRoman {
                 break;
             case "-":
                 answers = a - b;
+                if(answers < 0){
+                    return "В римских числах не может быть отрицательное число";
+                }
                 break;
             case "/":
                 answers = a / b;
@@ -39,9 +42,6 @@ public class ConverterToRoman {
                 default:
                     return "Введено некорректное выражение";
                 }
-        if (answers <= 0){
-            return "Калькулятор принимает числа от 1 и до 10";
-        }
         return roman[answers];
     }
 
